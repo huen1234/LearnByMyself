@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS person; 
+--CREATE TABLE IF NOT EXISTS person (...);
+
+CREATE TABLE IF NOT EXISTS person (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT DEFAULT 'email@sql.demo',
+    money REAL,
+    departmentId INTEGER REFERENCES department (id) ON DELETE CASCADE
+);
